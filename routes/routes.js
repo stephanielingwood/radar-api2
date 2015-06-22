@@ -11,4 +11,6 @@ function routes(app) {
       method: req.method
     });
   });
+
+  app.get('/issues', require('./issues.js'));
 }
