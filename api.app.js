@@ -15,7 +15,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-var WWW_URL = process.env.WWW_URL || 'http://localhost:3000';
+if (process.env.WWW_URL)
+  var WWW_URL = process.env.WWW_URL;
+else if (process.env.WWW_PORT)
+  var WWW_URL = 'http://localhost' + WWW_PORT;
+else
+  var WWW_URL = 'http://localhost:3000';
 
 app.use(function (req, res, next) {
     // Website you wish to allow to connect
