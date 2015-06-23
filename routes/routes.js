@@ -3,7 +3,7 @@ module.exports = routes;
 
 function routes(app) {
   app.all('/', function (req, res) {
-    res.json(200, {
+    res.status(200).json({
       status: 'OK',
       body: req.body,
       query: req.query,
