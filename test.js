@@ -1,8 +1,7 @@
 var superagent = require("superagent"),
     chai = require("chai"),
     expect = chai.expect,
-    should = require("should"),
-    nock = require("nock");
+    should = require("should")
 
 describe("Index", function() {
   it("renders something", function(done) {
