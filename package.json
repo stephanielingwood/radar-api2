@@ -1,9 +1,11 @@
 {
   "name": "radar-api2",
   "version": "0.0.1",
+  "private": true,
+  "main": "api.app.js",
   "author": "Kai",
   "scripts": {
-    "start": "app.js"
+    "start": "node api.app.js"
   },
   "dependencies": {
     "body-parser": "~1.12.0",
