@@ -1,13 +1,13 @@
 var cors = require('cors');
 var express = require('express');
 var path = require('path');
-var logger = require('morgan');
 var bodyParser = require('body-parser');
+var winston = require('winston');
 
 var routes = require('./routes/routes');
 var app = express();
 
-app.use(logger('dev'));
+global.logger = winston;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -21,11 +21,17 @@ app.use(function (req, res, next) {
   next();
 });
 
+if (process.env.ENVIRONMENT == 'prod') {
+  logger.remove(winston.transports.Console);
+  logger.add(winston.transports.File, { filename: 'logs.log' });
+  logger.add(winston.transports.Console, { level: 'error' })
+}
+
 routes(app);
 
 var PORT = process.env.API_PORT || '3001';
 
 // listen
 app.listen(PORT, function() {
-  console.log("Application running on port:", PORT);
+  logger.info("Application running on port:", PORT);
 });
