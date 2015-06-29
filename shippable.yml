@@ -1,9 +1,9 @@
 # language setting
 language: node_js
 
-# version numbers, testing against two versions of node
+# version numbers, testing against one version of node
 node_js:
-    - 0.10.25
+    - 0.10.33
 
 env:
     - XUNIT_FILE=./shippable/testresults/result.xml
