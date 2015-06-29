@@ -4,7 +4,7 @@ module.exports = routes;
 function routes(app) {
   app.all('/', function (req, res) {
     logger.info('Status page');
-    if (process.env.ENVIRONMENT == 'dev'){
+    if (process.env.NODE_ENV == 'dev'){
       res.status(200).json({
         status: 'OK -- dev',
         body: req.body,

@@ -21,11 +21,11 @@ app.use(function (req, res, next) {
   next();
 });
 
-if (process.env.ENVIRONMENT == 'test') {
-  logger.remove(winston.transports.Console);
+if (process.env.FILE_LOG){
   logger.add(winston.transports.File, { filename: 'logs.log' });
-  logger.add(winston.transports.Console, { level: 'error' });
 }
+logger.remove(winston.transports.Console);
+logger.add(winston.transports.Console, { level: process.env.CONSOLE_LOGLEVEL || 'debug' });
 
 routes(app);
 
