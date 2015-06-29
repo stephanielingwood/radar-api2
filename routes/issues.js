@@ -7,6 +7,7 @@ var typeNameArray = ["question", "bug", "feature request", "other"];
 var stateNameArray = ["resolved", "triaged", "in progress", "other"];
 
 function issues(req, res, next) {
+  logger.info('Issues page');
   try {
     if (req.query.token !== undefined) {
       if (req.query.state == "Open") {
@@ -19,6 +20,7 @@ function issues(req, res, next) {
     }
   } catch (e) {
     if (e.statusCode == 401){
+      logger.error('Access Error');
       load(res,'accessError');
     }
   }
@@ -50,6 +52,7 @@ function mainLoadingGET(state, req, res, next) {
     '&client_secret=4ff2bb2883f32c9702dd12a6c2464009f07c1550' +
     '&page='+page+'&per_page=100',options);
     if (data_json.statusCode == 404){
+      logger.error('Repo Error');
       loadState = 'repoError';
       break;
     } 
