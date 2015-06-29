@@ -21,10 +21,10 @@ app.use(function (req, res, next) {
   next();
 });
 
-if (process.env.ENVIRONMENT == 'prod') {
+if (process.env.ENVIRONMENT == 'test') {
   logger.remove(winston.transports.Console);
   logger.add(winston.transports.File, { filename: 'logs.log' });
-  logger.add(winston.transports.Console, { level: 'error' })
+  logger.add(winston.transports.Console, { level: 'error' });
 }
 
 routes(app);
