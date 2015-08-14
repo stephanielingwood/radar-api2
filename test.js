@@ -1,7 +1,8 @@
-var superagent = require("superagent"),
-    chai = require("chai"),
-    expect = chai.expect,
-    should = require("should")
+var superagent = require("superagent");
+var chai = require("chai");
+var expect = chai.expect;
+var should = require("should");
+var token = process.env.TOKEN;
 
 describe("Index", function() {
   it("renders something", function(done) {
@@ -17,7 +18,7 @@ describe("Index", function() {
 describe("Open issues", function() {
   it("renders open issues info", function(done) {
     superagent.get("http://localhost:3001/issues?repo=shippable/support"+
-      "&token=8b5764559d5cc7d8dd41ef7e639dc238eab4338a&days=2&daysEnd=5&state=Open")
+      "&token=" + token + "&days=2&daysEnd=5&state=Open")
     .end(function(err, res) {
       (err === null).should.equal(true);
       res.should.be.json;
@@ -31,7 +32,7 @@ describe("Open issues", function() {
 describe("Closed issues", function() {
   it("renders closed issues info", function(done) {
     superagent.get("http://localhost:3001/issues?repo=shippable/support&"+
-      "&token=8b5764559d5cc7d8dd41ef7e639dc238eab4338a&days=2&daysEnd=5&state=Close")
+      "&token=" + token + "&days=2&daysEnd=5&state=Close")
     .end(function(err, res) {
       (err === null).should.equal(true);
       res.should.be.json;
