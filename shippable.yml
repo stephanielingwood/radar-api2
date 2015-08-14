@@ -6,9 +6,10 @@ node_js:
     - 0.10.33
 
 env:
-    - XUNIT_FILE=./shippable/testresults/result.xml
-    - secure: #encrypted variable TOKEN
-    # TOKEN is a GitHub token for the subscription triggering the build
+    global:
+        - XUNIT_FILE=./shippable/testresults/result.xml
+        - secure: #encrypted variable TOKEN
+        # TOKEN is a GitHub token for the subscription triggering the build
 
 before_install:
     - node --version
