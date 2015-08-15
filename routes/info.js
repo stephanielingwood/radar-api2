@@ -13,6 +13,7 @@ function info(req, res, next) {
         version: pjson.version,
         time: new Date(),
         buildnumber: buildnum,
+        message: '"Welcome from Shippable!"',
         body: req.body,
         query: req.query,
         params: req.params,
