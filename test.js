@@ -15,33 +15,33 @@ describe("Index", function() {
   });
 });
 
-describe("Open issues", function() {
-  it("renders open issues info", function(done) {
-    superagent.get("http://localhost:3001/issues?repo=shippable/support"+
-      "&token=" + token + "&days=2&daysEnd=5&state=Open")
-    .end(function(err, res) {
-      (err === null).should.equal(true);
-      res.should.be.json;
-      res.text.should.containEql("open");
-      res.statusCode.should.equal(200);
-      done();
-    });
-  });
-});
+// describe("Open issues", function() {
+//   it("renders open issues info", function(done) {
+//     superagent.get("http://localhost:3001/issues?repo=shippable/support"+
+//       "&token=" + token + "&days=2&daysEnd=5&state=Open")
+//     .end(function(err, res) {
+//       (err === null).should.equal(true);
+//       res.should.be.json;
+//       res.text.should.containEql("open");
+//       res.statusCode.should.equal(200);
+//       done();
+//     });
+//   });
+// });
 
-describe("Closed issues", function() {
-  it("renders closed issues info", function(done) {
-    superagent.get("http://localhost:3001/issues?repo=shippable/support&"+
-      "&token=" + token + "&days=2&daysEnd=5&state=Close")
-    .end(function(err, res) {
-      (err === null).should.equal(true);
-      res.should.be.json;
-      res.text.should.containEql("close");
-      res.statusCode.should.equal(200);
-      done();
-    });
-  });
-});
+// describe("Closed issues", function() {
+//   it("renders closed issues info", function(done) {
+//     superagent.get("http://localhost:3001/issues?repo=shippable/support&"+
+//       "&token=" + token + "&days=2&daysEnd=5&state=Close")
+//     .end(function(err, res) {
+//       (err === null).should.equal(true);
+//       res.should.be.json;
+//       res.text.should.containEql("close");
+//       res.statusCode.should.equal(200);
+//       done();
+//     });
+//   });
+// });
 
 describe("Failed auth", function() {
   it("Should not render issues page, instead main page", function(done) {
