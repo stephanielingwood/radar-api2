@@ -4,7 +4,7 @@ FROM shipimg/appbase:latest
 # Bundle app source
 RUN mkdir -p /src
 ADD . /src
-ADD ./buildoutput/config.txt /src/config.txt
+# ADD ./buildoutput/config.txt /src/config.txt
 # Install app dependencies
 RUN cd /src; npm install
 
