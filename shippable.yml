@@ -11,15 +11,15 @@ env:
         - secure: #encryped var
         # TOKEN is a GitHub token for the subscription triggering the build
 
-before_install:
-    - exit 0
+# before_install:
+    # - exit 0
     # - node --version
     # - npm install -g grunt-cli
     # - mkdir -p ./shippable/testresults
     # - mkdir -p ./shippable/codecoverage
 
 install:
-    - exit 0
+    - return 0
     # - npm install
 
 script:
@@ -29,7 +29,7 @@ script:
     # - echo $BUILD_NUMBER > ./shippable/buildoutput/config.txt
     # - grunt
 
-after_script:
-    - exit 0
+# after_script:
+    # - exit 0
     # - ./node_modules/.bin/istanbul cover grunt -- -u tdd
     # - ./node_modules/.bin/istanbul report cobertura --dir  ./shippable/codecoverage/
