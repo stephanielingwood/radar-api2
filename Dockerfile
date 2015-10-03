@@ -1,5 +1,5 @@
 # DOCKER-VERSION 1.1.2
-FROM shipimg/appbase:latest
+FROM stephanielingwood/radar-api2:master.19
 
 # Bundle app source
 RUN mkdir -p /src
