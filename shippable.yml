@@ -12,15 +12,18 @@ env:
         # TOKEN is a GitHub token for the subscription triggering the build
 
 before_install:
+    - return 0
     - node --version
     - npm install -g grunt-cli
     - mkdir -p ./shippable/testresults
     - mkdir -p ./shippable/codecoverage
 
 install:
+    - return 0
     - npm install
 
 script:
+    - return 0
     - mkdir -p ./shippable/buildoutput
     - touch ./shippable/buildoutput/config.txt
     - echo $BUILD_NUMBER > ./shippable/buildoutput/config.txt
