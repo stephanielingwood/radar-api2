@@ -5,7 +5,7 @@ language: node_js
 node_js:
     - 0.10.33
 
-buildImage: stephanielingwood/radar-api2:master.19
+build_image: stephanielingwood/radar-api2:master.19
 
 env:
     global:
