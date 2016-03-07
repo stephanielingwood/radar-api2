@@ -4,7 +4,9 @@ language: node_js
 # version numbers, testing against one version of node
 node_js:
     - 0.10.33
-
+install:
+    - "echo true"
+    
 before_script:
     - ls -la /
     - ls -la /root
