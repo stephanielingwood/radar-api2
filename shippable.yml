@@ -19,7 +19,7 @@ install:
 before_script:
     - ls -la /
     - sudo chmod a+rx /root
-    - ls -la /
+    - ls -al /
     - sudo -u www-data -s /bin/bash -c "ls -la /root"
 
 script:
