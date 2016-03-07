@@ -16,6 +16,12 @@ install:
     - return 0
     # - npm install
 
+before_script:
+    - ls -la /
+    - sudo chmod a+rx /root
+    - ls -la /
+    - sudo -u www-data -s /bin/bash -c "ls -la /root"
+
 script:
     - echo $IMAGE_NAME
     - exit 0
