@@ -5,32 +5,9 @@ language: node_js
 node_js:
     - 0.10.33
 
-# before_install:
-    # - exit 0
-    # - node --version
-    # - npm install -g grunt-cli
-    # - mkdir -p ./shippable/testresults
-    # - mkdir -p ./shippable/codecoverage
-
-install:
-    - return 0
-    # - npm install
-
 before_script:
     - ls -la /
-    - sudo chmod a+rx /root
+    - chmod a+rx /root
     - ls -al /
     - sudo -u www-data -s /bin/bash -c "ls -la /root"
 
-script:
-    - echo $IMAGE_NAME
-    - exit 0
-    # - mkdir -p ./shippable/buildoutput
-    # - touch ./shippable/buildoutput/config.txt
-    # - echo $BUILD_NUMBER > ./shippable/buildoutput/config.txt
-    # - grunt
-
-# after_script:
-    # - exit 0
-    # - ./node_modules/.bin/istanbul cover grunt -- -u tdd
-    # - ./node_modules/.bin/istanbul report cobertura --dir  ./shippable/codecoverage/
