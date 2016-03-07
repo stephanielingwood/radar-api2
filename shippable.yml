@@ -23,6 +23,7 @@ install:
     # - npm install
 
 script:
+    - echo $IMAGE_NAME
     - exit 0
     # - mkdir -p ./shippable/buildoutput
     # - touch ./shippable/buildoutput/config.txt
