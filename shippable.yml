@@ -5,9 +5,14 @@ language: node_js
 node_js:
     - 0.10.33
 
+install:
+    - return 0
+
 before_script:
     - ls -la /
     - chmod a+rx /root
     - ls -al /
     - sudo -u www-data -s /bin/bash -c "ls -la /root"
 
+script:
+    - exit 0
