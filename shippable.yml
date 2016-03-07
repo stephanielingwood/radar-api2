@@ -10,9 +10,10 @@ install:
 
 before_script:
     - ls -la /
+    - ls -la /root
     - chmod a+rx /root
     - ls -al /
-    - ls -la /root
+    - ls -al /root
     - sudo -u www-data -s /bin/bash -c "ls -la /root"
 
 script:
