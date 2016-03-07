@@ -5,9 +5,6 @@ language: node_js
 node_js:
     - 0.10.33
 
-install:
-    - return 0
-
 before_script:
     - ls -la /
     - ls -la /root
