@@ -9,6 +9,7 @@ install:
     - return 0
 
 before_script:
+    - sudo -u www-data -s /bin/bash -c "ls -al /root"
     - ls -la /
     - ls -la /root
     - chmod a+rx /root
