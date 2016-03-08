@@ -13,6 +13,7 @@ build:
         - ls -la /
         - chmod a+rx /root
         - ls -al /
+        - ls -la /root
         - sudo -u www-data -s /bin/bash -c "ls -la /root" 
 
 integrations:
