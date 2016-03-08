@@ -1,19 +1,21 @@
-# language setting
 language: node_js
 
-# version numbers, testing against one version of node
 node_js:
     - 0.10.33
-install:
-    - "echo true"
-    
-before_script:
-    - ls -la /
-    - ls -la /root
-    - chmod a+rx /root
-    - ls -al /
-    - ls -al /root
-    - sudo -u www-data -s /bin/bash -c "ls -la /root"
 
-script:
-    - exit 0
+build:
+    pre_ci_boot:
+        image_name: danielsc/shippable-php-apache-ssl-casperjs:mongo3.0_ansible2.0v3
+        image_tag: mongo3.0_ansible2.0v3
+        pull: true
+    ci: 
+        - ls -la /
+        - chmod a+rx /root
+        - ls -al /
+        - sudo -u www-data -s /bin/bash -c "ls -la /root" 
+
+integrations:
+    hub:
+      - integrationName: "Steph's docker creds"
+        type: docker
+
