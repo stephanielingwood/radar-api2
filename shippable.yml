@@ -16,6 +16,6 @@ build:
 
 integrations:
     hub:
-      - integrationName: "Steph's docker creds"
+      - integrationName: stephanieDocker
         type: docker
 
