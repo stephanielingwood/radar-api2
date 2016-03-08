@@ -5,7 +5,7 @@ node_js:
 
 build:
     pre_ci_boot:
-        image_name: danielsc/shippable-php-apache-ssl-casperjs:mongo3.0_ansible2.0v3
+        image_name: danielsc/shippable-php-apache-ssl-casperjs
         image_tag: mongo3.0_ansible2.0v3
         pull: true
     ci: 
