@@ -9,6 +9,7 @@ build:
         image_tag: mongo3.0_ansible2.0v3
         pull: true
     ci: 
+        - whoami
         - ls -la /
         - chmod a+rx /root
         - ls -al /
